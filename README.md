@@ -9,7 +9,7 @@ upload de imagem.
 * /db – pasta com os arquivos do banco de dados
 * /images - pasta para armazenar arquivos de imagens
 * /js – pasta com os scripts front-end
-* /pages – arquivos html ou componentes de visualização da sinopse do filme e do cadastro de filmes
+* /views – arquivos html ou componentes de visualização da sinopse do filme e do cadastro de filmes
 * /routes – rotas com design pattern singleton
 * index.html – arquivo da página principal do projeto contendo o catálogo de filmes
 * Readme.md – instrução para execução do projeto e instalação das dependências
