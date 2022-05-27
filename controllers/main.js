@@ -1,7 +1,5 @@
 const index = (req, res) => {
-    res.render("index", {
-        layout: false
-    });
+    res.render("index");
 }
 
 export default { index };
