@@ -1,32 +1,15 @@
 import express from "express";
+import mainController from "../controllers/main.js";
+import movieController from "../controllers/movie.js";
 
 const router = express.Router();
 
 // Main Controller
-router.get("/", function(req, res) {
-    res.render("index", {
-        layout: false
-    });
-});
+router.get("/", mainController.index);
 
 // Movie Controller
-router.get("/sinopse/:titulo", function(req, res) {
-    const { titulo } = req.params;
-    res.render("sinopse", {
-        titulo: titulo,
-        layout: false
-    });
-});
-router.get("/novo", function(req, res) {
-    res.render("novo", {
-        layout:false
-    });
-});
-router.post("/novo", function(req, res) {
-    res.render("novo", {
-        layout:false
-    });
-});
-
+router.get("/sinopse/:titulo", movieController.read);
+router.get("/novo", movieController.create);
+router.post("/novo", movieController.create);
 
 export default router;
