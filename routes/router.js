@@ -10,6 +10,6 @@ router.get("/", mainController.index);
 // Movie Controller
 router.get("/sinopse/:titulo", movieController.read);
 router.get("/novo", movieController.create);
-router.post("/novo", movieController.create);
+router.post("/novo/inserir", movieController.insert);
 
 export default router;

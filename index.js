@@ -30,6 +30,8 @@ app.use("/css", express.static(`${__dirname}/public/css`));
 app.use("/js", [
     express.static(`${__dirname}/node_modules/bootstrap/dist/js/`)
 ]);
+app.use(express.urlencoded({ extended: false }));
+
 app.use(router);
 
 app.listen(PORT, () => {

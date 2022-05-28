@@ -1,0 +1,21 @@
+body {
+    background-color: $dark-blue;
+    h1 {
+        color: $orange;
+    }
+}
+.navbar-dark {
+
+    .navbar-nav .nav-item .nav-link{
+        color: $orange;
+        &:hover {
+            color: $gray-100;
+        }
+    }
+    
+    .navbar-brand {
+        &:hover {
+            color: $orange;
+        }
+    }
+}

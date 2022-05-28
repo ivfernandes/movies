@@ -17,8 +17,14 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      imagem: {
+      nota: {
         allowNull: false,
+        type: Sequelize.INTEGER
+      },
+      imagemUrl: {
+        type: Sequelize.STRING
+      },
+      imagem: {
         type: Sequelize.BLOB
       },
       createdAt: {
