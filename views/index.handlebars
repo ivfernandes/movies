@@ -16,8 +16,13 @@
             {{/if}}
 
             <div class="card-footer">
-                <p class="card-text">{{nota}}</p>
-                <a href="/sinopse/{{nome}}">Ver mais...</a>
+                <i class="fa-{{avaliacao nota 1}} fa-star"></i>
+                <i class="fa-{{avaliacao nota 2}} fa-star"></i>
+                <i class="fa-{{avaliacao nota 3}} fa-star"></i>
+                <i class="fa-{{avaliacao nota 4}} fa-star"></i>
+                <i class="fa-{{avaliacao nota 5}} fa-star"></i>
+                <br>
+                <a href="/sinopse/{{nome}}"><i class="fa-solid fa-arrow-up-right-from-square"></i> Saiba mais</a>
             </div>
         </li>
         {{/each}}

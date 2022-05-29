@@ -7,6 +7,7 @@ const PORT = 5555;
 const app = express();
 
 app.engine("handlebars", engine({
+    helpers: require(`${__dirname}/views/helpers/helpers`),
     layoutsDir: `${__dirname}/views/layouts`,
     defaultLayout: "main"
 }));
