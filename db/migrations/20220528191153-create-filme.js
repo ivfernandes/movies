@@ -15,7 +15,7 @@ module.exports = {
       },
       sinopse: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       nota: {
         allowNull: false,

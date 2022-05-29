@@ -3,6 +3,7 @@ body {
     h1 {
         color: $orange;
     }
+    color: $white;
 }
 .navbar-dark {
 
@@ -14,8 +15,33 @@ body {
     }
     
     .navbar-brand {
+        color: $orange;
+    }
+}
+
+.card-custom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+
+    .card {
+        width: 16%;
+        background-color: transparent;
+        text-align: center;
+        border: 0;
+        margin-right: 2%;
+
+        .card-header {
+            font-size: 130%;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: $white;
         &:hover {
             color: $orange;
         }
     }
 }
+
