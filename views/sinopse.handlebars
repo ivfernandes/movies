@@ -1,6 +1,20 @@
-<div class="container">
+<div class="container sinopse-titulo mt-5">
     <h1>Sinopse &#38; Info</h1>
-    <h2>{{filme.nome}}</h2>
-    <p>{{filme.sinopse}}</p>
-    <img src="{{filme.imagemUrl}}" alt="">
 </div>
+<div class="container-md sinopse-container mt-4">
+    <div class="container sinopse-img">
+        {{#if filme.imagemUrl}}
+            <img src="{{filme.imagemUrl}}" class="img-fluid cropped2"  alt="">
+        {{else}}
+            <img src="/images/{{filme.imagem}}" class="img-fluid"  alt="">
+        {{/if}}
+    </div>
+    <div class="container sinopse">
+        <h2>{{filme.nome}}</h2>
+        <p>{{filme.sinopse}}</p>
+    </div>
+</div>
+<div class="container sinopse-botao mt-4 mb-5">
+    <button type="button" class="btn btn-outline-warning" onclick="location.href = document.referrer;">Voltar</button>
+</div>
+

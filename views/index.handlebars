@@ -1,4 +1,4 @@
-<div class="container mt-4">
+<div class="container mt-4 index">
     <h1>Últimos filmes adicionados</h1>
     <ul class="card-custom">
         {{#each filmes}}
@@ -9,10 +9,10 @@
                 <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
             </svg> --}}
             {{#if imagemUrl}}
-            <img src="{{imagemUrl}}" alt="">
+            <img src="{{imagemUrl}}" class="rounded" alt="">
             {{/if}}
             {{#if imagem}}
-            <img src="/images/{{imagem}}" alt="">
+            <img src="/images/{{imagem}}" class="rounded" alt="">
             {{/if}}
 
             <div class="card-footer">
