@@ -14,19 +14,18 @@ const create = (req, res) => {
 
 const insert = async (req, res) => {
     try {
-        const imagemUrl = req.body.inputImagemUrl.length === 0 ? null : req.body.inputImagemUrl;
-        const imagem = req.body.imagem === undefined ? null : req.body.imagem;
+        const imagemUrl = req.body.inputImagemUrl === undefined || req.body.inputImagemUrl.length === 0 ? null : req.body.inputImagemUrl;
 
-        if (!imagemUrl && !imagem) {
+        if (!imagemUrl && !req.file) {
             throw new Error("URL do cartaz ou Cartaz do filme devem ser preenchidos!");
         }
-
+        const imagem = req.file ? `${Date.now().toString()}_${req.file.originalname}` : null;
         await Filme.create({
             nome: req.body.inputTitulo,
             sinopse: req.body.inputSinopse,
             nota: req.body.inputNota,
-            imagemUrl: req.body.inputImagemUrl,
-            imagem: req.body.inputImagem
+            imagemUrl: imagemUrl,
+            imagem: imagem
         });
         res.redirect("/");
     } catch (error) {

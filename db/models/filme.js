@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     sinopse: DataTypes.TEXT,
     nota: DataTypes.INTEGER,
     imagemUrl: DataTypes.STRING,
-    imagem: DataTypes.BLOB
+    imagem: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Filme',

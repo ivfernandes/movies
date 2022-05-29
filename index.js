@@ -2,12 +2,6 @@ import express from "express";
 import router from "./routes/router.js";
 import { engine } from "express-handlebars";
 import sass from "node-sass-middleware";
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-console.log(__dirname);
 
 const PORT = 5555;
 const app = express();
