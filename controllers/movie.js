@@ -19,7 +19,7 @@ const insert = async (req, res) => {
         if (!imagemUrl && !req.file) {
             throw new Error("URL do cartaz ou Cartaz do filme devem ser preenchidos!");
         }
-        const imagem = req.file ? `${Date.now().toString()}_${req.file.originalname}` : null;
+        const imagem = req.file ? req.file.filename : null;
         await Filme.create({
             nome: req.body.inputTitulo,
             sinopse: req.body.inputSinopse,
