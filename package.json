@@ -4,6 +4,7 @@
   "description": "Plataforma colaborativa de catálogo de filmes",
   "main": "index.js",
   "scripts": {
+    "migrate": "npx sequelize db:migrate",
     "start": "npx nodemon -r esm index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
