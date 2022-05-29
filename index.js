@@ -3,7 +3,7 @@ import router from "./routes/router.js";
 import { engine } from "express-handlebars";
 import sass from "node-sass-middleware";
 
-const PORT = process.env.PORT || 5555;
+const PORT = 5432;
 const app = express();
 
 app.engine("handlebars", engine({
