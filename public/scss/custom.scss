@@ -5,17 +5,27 @@ body {
     }
     color: $white;
 }
+
+.navbar{
+    &.bg-dark {
+        background-color: $dark-orange !important;
+    }
+}
+
 .navbar-dark {
 
     .navbar-nav .nav-item .nav-link{
-        color: $orange;
+        color: $white;
         &:hover {
-            color: $gray-100;
+            color: $black;
         }
     }
     
     .navbar-brand {
-        color: $orange;
+        color: $white;
+        &:hover {
+            color: $black;
+        }
     }
 }
 
@@ -183,7 +193,7 @@ body {
         }
     
         img {
-            height: 550px;
+            height: 400px;
             box-shadow: 0 0 1em $orange
         }
     }
