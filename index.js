@@ -3,7 +3,7 @@ import router from "./routes/router.js";
 import { engine } from "express-handlebars";
 import sass from "node-sass-middleware";
 
-const PORT = 5432;
+const port = process.env.PORT || 5555;
 const app = express();
 
 app.engine("handlebars", engine({
@@ -31,6 +31,6 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(router);
 
-app.listen(PORT, () => {
-    console.log(`Escutando na porta ${PORT}`);
+app.listen(port, () => {
+    console.log(`Escutando na porta ${port}`);
 });
