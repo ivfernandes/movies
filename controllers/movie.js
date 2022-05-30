@@ -35,4 +35,34 @@ const insert = async (req, res) => {
     }
 }
 
-export default { read, create, insert };
+const update = async (req, res) => {
+    const filme = await Filme.findOne({ where: { id: req.params.id }});
+    if (req.route.methods.get) {
+        res.render("update", {
+            filme: filme.toJSON()
+        });
+    } else if (req.route.methods.post) {
+        try {
+            await Filme.update({
+                nome: req.body.inputTitulo,
+                sinopse: req.body.inputSinopse,
+                nota: req.body.inputNota
+            }, { where: { id: req.params.id }});
+            res.redirect(`/sinopse/${req.body.inputTitulo}`);
+        } catch (error) {
+            res.send(error);
+        }        
+    }
+}
+
+const remove = async (req, res) => {
+    const { id } = req.params;
+    try {
+        await Filme.destroy({ where: { id: id }});
+        res.redirect("/");
+    } catch (error) {
+        res.status(500).send(error);
+    }
+}
+
+export default { read, create, insert, remove, update };

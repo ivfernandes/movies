@@ -4,9 +4,9 @@
 <div class="container-md sinopse-container mt-4">
     <div class="container sinopse-img">
         {{#if filme.imagemUrl}}
-            <img src="{{filme.imagemUrl}}" class="img-fluid cropped2"  alt="">
+            <img src="{{filme.imagemUrl}}" class="img-fluid cropped2"  alt="Cartaz do filme {{filme.nome}}">
         {{else}}
-            <img src="/images/{{filme.imagem}}" class="img-fluid"  alt="">
+            <img src="/images/{{filme.imagem}}" class="img-fluid"  alt="Cartaz do filme {{filme.nome}}">
         {{/if}}
     </div>
     <div class="container sinopse">
@@ -14,7 +14,37 @@
         <p>{{filme.sinopse}}</p>
     </div>
 </div>
-<div class="container sinopse-botao mt-4 mb-5">
+<div class="container-md sinopse-bottom mt-4 mb-5">
     <button type="button" class="btn btn-outline-warning" onclick="location.href = document.referrer;">Voltar</button>
+    <ul>
+        <div><a class="sinopse-link" href="/update/{{filme.id}}"><i class="fa-solid fa-pen-to-square"></i></a></div>
+        <div><a class="sinopse-link" data-bs-toggle="modal" data-bs-target="#modal-delete"><i class="fa-solid fa-trash-can"></i></a></div>
+    </ul>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="modal-delete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Deletar Filme</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <div>Deseja deletar o filme <i>{{filme.nome}}</i>?</div>
+          <div>Essa ação não poderá ser desfeita!</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button id="botao-delecao" type="button" class="btn btn-outline-warning">Deletar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    const botaoDelecao = document.getElementById("botao-delecao");
+    botaoDelecao.onclick = function() {
+        apagarFilme({{filme.id}});
+    }
+</script>

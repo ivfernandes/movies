@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col-7 mx-auto mt-4">
+            <h1>Atualizar filme</h1>
+            <form action="/update/{{filme.id}}" method="post">
+                <div class="form-group">
+                <label for="inputTitulo" class="form-label mt-4">Nome do filme</label>
+                <input type="text" class="form-control" name="inputTitulo" id="inputTitulo" value="{{filme.nome}}" required>
+                </div>
+                <div class="form-group">
+                <label for="inputSinopse" class="form-label mt-4">Sinopse</label>
+                <textarea class="form-control" name="inputSinopse" id="inputSinopse" rows="3" data-gramm="false" wt-ignore-input="true" required>{{filme.sinopse}}</textarea>
+                </div>
+                <div class="form-group">
+                <label for="inputNota" class="form-label mt-4">Nota para o filme</label>
+                <select class="form-select" name="inputNota" id="inputNota" required>
+                    <option value="1" {{verificaNota filme.nota 1}}>1</option>
+                    <option value="2" {{verificaNota filme.nota 2}}>2</option>
+                    <option value="3" {{verificaNota filme.nota 3}}>3</option>
+                    <option value="4" {{verificaNota filme.nota 4}}>4</option>
+                    <option value="5" {{verificaNota filme.nota 5}}>5</option>
+                </select>
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto mt-4">
+                    <button type="submit" class="btn btn-outline-warning btn-lg">Atualizar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
