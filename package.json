@@ -1,9 +1,12 @@
 {
-  "name": "dev",
+  "name": "moviedev",
   "version": "1.0.0",
   "description": "Plataforma colaborativa de catálogo de filmes",
   "main": "index.js",
   "scripts": {
+    "dbmigrate": "npx sequelize db:migrate",
+    "dbseed": "npx sequelize-cli db:seed:all",
+    "dball": "npm run dbmigrate && npm run dbseed",
     "start": "npx nodemon -r esm index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,7 +15,7 @@
     "url": "git+https://github.com/ivfernandes/movies.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Igor Fernandes",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ivfernandes/movies/issues"
