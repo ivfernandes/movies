@@ -2,7 +2,9 @@ import express from "express";
 import router from "./routes/router.js";
 import { engine } from "express-handlebars";
 import sass from "node-sass-middleware";
+import dotenv from "dotenv";
 
+dotenv.config();
 const port = process.env.PORT || 5555;
 const app = express();
 
